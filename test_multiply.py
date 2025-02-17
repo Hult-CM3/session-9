@@ -19,6 +19,25 @@ def test_multiply():
 
 
 
+""" 
+def test_multiply():
+    try:
+        assert multiply(2,2) == 4
+    except:
+        print("2 * 2 is not 4")         
+"""
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
