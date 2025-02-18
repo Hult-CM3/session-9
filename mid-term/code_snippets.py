@@ -1,5 +1,5 @@
 # grade scenario - which works?
-def get_grade1(s):
+def get_grade1(s): # does not work
    if 100 < s > 90:
       return 'A'
    if 90 < s > 80: 
@@ -8,7 +8,7 @@ def get_grade1(s):
       return 'C' 
    return 'F'
 
-def get_grade3(s): 
+def get_grade3(s): # works
    if 100 >= s >= 90:
      return 'A'
    if 90 > s >= 80:
@@ -17,7 +17,7 @@ def get_grade3(s):
      return 'C'
    return 'F'
 
-def get_grade2(s): 
+def get_grade2(s): # works!
    if s >= 90: 
       return 'A' 
    if s >= 80: 
@@ -25,42 +25,44 @@ def get_grade2(s):
    if s >= 70: 
       return 'C' 
    return 'F'
-s = [95, 75, 65] # should return an 'A' 'B' then 'F'
 
-for i in gr:  
-  print("1 {get_grade1(gr[i])}")
-  print("2 {get_grade2(gr[i])}")
-  print("3 {get_grade3(gr[i])}")
+gr = [95, 85, 75, 65] # should return an 'A' 'B' 'C' then 'F'
+
+for i in gr:
+    print(f"1 {get_grade1(i)}")
+    print(f"2 {get_grade2(i)}")
+    print(f"3 {get_grade3(i)}")
 
 # Vowel scenario - which works?
 
-def any_vowel_1(w):
+def any_vowel_1(s): # works
     for c in s:
         if c in 'aeiou':
             return True
     return False
   
-def any_vowel_2(w):
+def any_vowel_2(s): # doesn't work
     for c in s:
         if 'c' in 'aeiou':
             return 'True'
         else:
             return 'False'
 
-def any_vowel_3(w):
+def any_vowel_3(s): # doesn't work
     for c in s:
         flag = c not in 'aeiou'
     return flag
 
 w = ["hello", "sky"]
-for j in w:  
-  print("1 {any_vowel1(w[j])}")
-  print("2 {any_vowel2(w[j])}")
-  print("3 {any_vowel3(w[j])}")
+
+for j in w:
+    print(f"1 {j} - {any_vowel_1(j)}")
+    print(f"2 {j} - {any_vowel_2(j)}")
+    print(f"3 {j} - {any_vowel_3(j)}")
 
 # Sentence Scenario - which works?
 
-def count_1(sentence, target):
+def count_1(sentence, target): # works 
     words = sentence.split()
     count = 0
     for word in words:
@@ -68,7 +70,7 @@ def count_1(sentence, target):
             count = count + 1
     return count
 
-def count_2(sentence, target):
+def count_2(sentence, target): # doesn't work
     words = sentence.split()
     count = 0
     for word in words:
@@ -77,7 +79,7 @@ def count_2(sentence, target):
             return count
     return count 
 
-def count_3(sentence, target):
+def count_3(sentence, target): # works
     words = sentence.split()
     count = 0
     for word in words:
@@ -85,7 +87,8 @@ def count_3(sentence, target):
             count = count + 1
     return count
 
-print(count_1("the cat and the dog", "the"))
-print(count_2("the cat and the dog", "the"))
-print(count_3("the cat and the dog", "the"))
+print(f"1 - {count_1("the cat and the dog", "the")}")
+print(f"2 - {count_2("the cat and the dog", "the")}")
+print(f"2 - {count_3("the cat and the dog", "the")}")
+
 
