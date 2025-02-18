@@ -87,8 +87,8 @@ def count_3(sentence, target): # works
             count = count + 1
     return count
 
-print(f"1 - {count_1("the cat and the dog", "the")}")
-print(f"2 - {count_2("the cat and the dog", "the")}")
-print(f"2 - {count_3("the cat and the dog", "the")}")
+print(f"1 - {count_1("the cat and the dog go to the moon", "the")}")
+print(f"2 - {count_2("the cat and the dog go to the moon", "the")}")
+print(f"2 - {count_3("the cat and the dog go to the moon", "the")}")
 
 
